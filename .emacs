@@ -1,5 +1,26 @@
+
+
+
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector
+   ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
+ '(custom-enabled-themes '(wheatgrass)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
 ;set default working directory to user home
-(setq default-directory "C:\\Users\\david\\")
+(setq default-directory "C:\\Users\\davidf1021\\")
+
+
 
 
 ;blank buffer on startup
@@ -22,4 +43,8 @@
 
 ;switch default buffer keybinding to ibuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
+
+;set start up frame size geometry
+(when window-system (set-frame-size (selected-frame) 150 45))
+(desktop-save-mode 1)
 
