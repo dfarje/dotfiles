@@ -18,9 +18,14 @@
  )
 
 ;set default working directory to user home
-(setq default-directory "C:\\Users\\davidf1021\\")
-
-
+;(setq default-directory "C:\\Users\\davidf1021\\")
+(cond
+ ((string-equal system-type "windows-nt")
+  (progn
+    (setq default-directory "c:\\Users\\davidf1021\\")))
+ ((string-equal system-type "gnu/linux")
+  (progn
+    (setq default-directory "/home/symtex/"))))
 
 
 ;blank buffer on startup
