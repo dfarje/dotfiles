@@ -19,14 +19,9 @@
 
 ;set default working directory to user home
 ;(setq default-directory "C:\\Users\\davidf1021\\")
-(cond
- ((string-equal system-type "windows-nt")
-  (progn
-    (setq default-directory "c:\\Users\\davidf1021\\")))
- ((string-equal system-type "gnu/linux")
-  (progn
-    (setq default-directory "/home/symtex/"))))
-
+(if (eq system-type 'windows-nt)
+    (setq default-directory "C:\\Users\\davidf1021\\")
+  (setq default-directory "/home/symtex/"))
 
 ;blank buffer on startup
 (setq inhibit-splash-screen t)
@@ -50,6 +45,6 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;set start up frame size geometry
-(when window-system (set-frame-size (selected-frame) 150 45))
+;(when window-system (set-frame-size (selected-frame) 150 45))
 (desktop-save-mode 1)
 
