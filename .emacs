@@ -25,7 +25,7 @@
 
 ;blank buffer on startup
 (setq inhibit-splash-screen t)
-(switch-to-buffer "**")
+;(switch-to-buffer "**")
 
 ;disable backup we use git for everything
 (setq backup-inhibited t)
@@ -48,3 +48,4 @@
 ;(when window-system (set-frame-size (selected-frame) 150 45))
 (desktop-save-mode 1)
 
+(setq python-shell-interpreter "python3")
