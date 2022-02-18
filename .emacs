@@ -1,10 +1,7 @@
 ;; Package stuff
 (require 'package)
-(add-to-list 'package-archives
-	     '("melpa-stable" . "https://stable.melpa.org/packages/")
-	     ("org" . "https://orgmode.org/elpa/"))
-
-
+(add-to-list 'package-archives '("melpa", "https://melap.org/packages/"))
+(add-to-list 'package-archives '("org", "https://orgmode.org/elpa/"))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
