@@ -1,4 +1,8 @@
-
+;; Package stuff
+(require 'package)
+(add-to-list 'package-archives
+	     '("melpa-stable" . "https://stable.melpa.org/packages/")
+	     ("org" . "https://orgmode.org/elpa/"))
 
 
 
@@ -17,35 +21,35 @@
  ;; If there is more than one, they won't work right.
  )
 
-;set default working directory to user home
-;(setq default-directory "C:\\Users\\davidf1021\\")
+;;set default working directory to user home
+;;(setq default-directory "C:\\Users\\davidf1021\\")
 (if (eq system-type 'windows-nt)
     (setq default-directory "C:\\Users\\davidf1021\\")
   (setq default-directory "/home/symtex/"))
 
-;blank buffer on startup
+;;blank buffer on startup
 (setq inhibit-splash-screen t)
-;(switch-to-buffer "**")
+;;(switch-to-buffer "**")
 
-;disable backup we use git for everything
+;;disable backup we use git for everything
 (setq backup-inhibited t)
-;disable auto save we use git for everything
+;;disable auto save we use git for everything
 (setq auto-save-default nil)
 
-;use line numbers when in any programming mode
+;;use line numbers when in any programming mode
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
-;set keybindings to resize windows
+;;set keybindings to resize windows
 (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
 (global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "S-C-<down>") 'shrink-window)
 (global-set-key (kbd "S-C-<up>") 'enlarge-window)
 
-;switch default buffer keybinding to ibuffer
+;;switch default buffer keybinding to ibuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
-;set start up frame size geometry
-;(when window-system (set-frame-size (selected-frame) 150 45))
+;;set start up frame size geometry
+;;(when window-system (set-frame-size (selected-frame) 150 45))
 (desktop-save-mode 1)
 
 (setq python-shell-interpreter "python3")
