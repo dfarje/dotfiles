@@ -1,7 +1,8 @@
 ;; Package stuff
 (require 'package)
-(add-to-list 'package-archives '("melpa", "https://melap.org/packages/"))
-(add-to-list 'package-archives '("org", "https://orgmode.org/elpa/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/"))
+(package-initialize)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -10,7 +11,8 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector
    ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
- '(custom-enabled-themes '(wheatgrass)))
+ '(custom-enabled-themes '(wheatgrass))
+ '(package-selected-packages '(plantuml-mode ##)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -49,4 +51,8 @@
 ;;(when window-system (set-frame-size (selected-frame) 150 45))
 (desktop-save-mode 1)
 
+;; python variable for some stuff
 (setq python-shell-interpreter "python3")
+
+;; plantuml variable for org mode
+(setq org-plantuml-jar-path "/home/symtex/plantuml.jar")
