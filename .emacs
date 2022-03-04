@@ -55,4 +55,6 @@
 (setq python-shell-interpreter "python3")
 
 ;; plantuml variable for org mode
-(setq org-plantuml-jar-path "/home/symtex/plantuml.jar")
+(if (eq system-type 'windows-nt)
+    (setq org-plantuml-jar-path "C:\\Users\\davidf1021\\Downloads\\plantuml.jar")
+  (setq org-plantuml-jar-path "/home/symtex/Downloads/plantuml.jar"))
