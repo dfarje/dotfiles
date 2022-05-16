@@ -12,7 +12,9 @@
  '(ansi-color-names-vector
    ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(custom-enabled-themes '(wheatgrass))
- '(package-selected-packages '(plantuml-mode ##)))
+ '(org-babel-load-languages '((emacs-lisp . t) (org . t) (plantuml . t)))
+ '(org-html-htmlize-output-type 'css)
+ '(package-selected-packages '(groovy-mode org plantuml-mode ##)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -45,7 +47,7 @@
 (global-set-key (kbd "S-C-<up>") 'enlarge-window)
 
 ;;switch default buffer keybinding to ibuffer
-(global-set-key (kbd "C-x C-b") 'ibuffer)
+ (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;;set start up frame size geometry
 ;;(when window-system (set-frame-size (selected-frame) 150 45))
@@ -58,3 +60,15 @@
 (if (eq system-type 'windows-nt)
     (setq org-plantuml-jar-path "C:\\Users\\davidf1021\\Downloads\\plantuml.jar")
   (setq org-plantuml-jar-path "/home/symtex/Downloads/plantuml.jar"))
+
+
+;; Clear out carriare-returns for DP radware config files
+(defun radreplace ()
+  (interactive)
+  (save-excursion
+    (goto-char 0)
+    (while (search-forward "\r" nil :noerror)
+      (replace-match ""))))
+
+
+
